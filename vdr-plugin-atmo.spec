@@ -3,7 +3,7 @@
 %define Plugin	atmolight
 %define name	vdr-plugin-%plugin
 %define version	0.0.1
-%define rel	14
+%define rel	15
 
 Summary:	VDR plugin: Atmolight-Plugin
 Name:		%name
@@ -13,8 +13,9 @@ Group:		Video
 License:	GPL
 URL:		http://www.edener.de/
 Source:		http://www.edener.de/%Plugin.tar.bz2
+Patch1:		atmolight-0.0.1-i18n-1.6.patch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
-BuildRequires:	vdr-devel >= 1.4.1-6
+BuildRequires:	vdr-devel >= 1.6.0
 BuildRequires:	dos2unix
 Requires:	vdr-abi = %vdr_abi
 
@@ -27,6 +28,8 @@ details.
 %prep
 %setup -q -n %Plugin-%version
 dos2unix HISTORY firmware/Makefile firmware/main.hex
+%patch1 -p1
+%vdr_plugin_prep
 
 %vdr_plugin_params_begin %plugin
 # send atmolight-data over network (e.g. 192.168.0.1:1234)
