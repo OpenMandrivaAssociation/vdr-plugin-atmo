@@ -3,7 +3,7 @@
 %define Plugin	atmolight
 %define name	vdr-plugin-%plugin
 %define version	0.0.1
-%define rel	16
+%define rel	17
 
 Summary:	VDR plugin: Atmolight-Plugin
 Name:		%name
