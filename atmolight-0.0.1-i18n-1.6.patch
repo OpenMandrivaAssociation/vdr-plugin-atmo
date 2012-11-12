@@ -1,0 +1,127 @@
+
+This is a semi-automatically created i18n adaptation patch and may contain
+errors (such as missing translations). This should only be used as a
+temporary measure until the upstream plugin maintainer fixes the plugin
+properly according to the instructions in i18n-to-gettext.pl.
+
+Created for Mandriva Linux packaging by Anssi Hannula <anssi@mandriva.org>.
+
+
+Index: atmolight-0.0.1/Makefile
+===================================================================
+--- atmolight-0.0.1/Makefile
++++ atmolight-0.0.1/Makefile	2008-04-16 13:38:39.000000000 +0300
+@@ -45,7 +45,7 @@
+ 
+ ### The object files (add further files here):
+ 
+-OBJS = $(PLUGIN).o i18n.o setup.o thread.o
++OBJS = $(PLUGIN).o  setup.o thread.o
+ 
+ ### Implicit rules:
+ 
+Index: atmolight-0.0.1/atmo.c
+===================================================================
+--- atmolight-0.0.1/atmo.c
++++ atmolight-0.0.1/atmo.c	2008-04-16 13:38:39.000000000 +0300
+@@ -9,7 +9,7 @@
+ #include <getopt.h>
+ #include <arpa/inet.h>
+ #include <vdr/plugin.h>
+-#include "i18n.h"
++
+ #include "setup.h"
+ #include "thread.h"
+ #include "atmo.h"
+@@ -89,7 +89,7 @@
+ bool cPluginAtmo::Start(void)
+ {
+   // Start any background activities the plugin shall perform.
+-  RegisterI18n(Phrases);
++  
+   AtmoThread = new cAtmoThread();
+   AtmoThread->Start();
+   return true;
+Index: atmolight-0.0.1/i18n.c
+===================================================================
+--- atmolight-0.0.1/i18n.c
++++ atmolight-0.0.1/i18n.c	2008-04-16 13:38:39.000000000 +0300
+@@ -1,57 +0,0 @@
+-/*
+- * i18n.c: Internationalization
+- *
+- * See the README file for copyright information and how to reach the author.
+- *
+- * $Id$
+- */
+-
+-#include "i18n.h"
+-
+-const tI18nPhrase Phrases[] = {
+-  { "Sleeptime (ms)",
+-    "Wartezeit (ms)",
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-  },
+-  { "Percentage new Color",
+-    "Prozent neue Farbe",
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-    "",// TODO
+-  },
+-  { NULL }
+-};
+Index: atmolight-0.0.1/i18n.h
+===================================================================
+--- atmolight-0.0.1/i18n.h
++++ atmolight-0.0.1/i18n.h	2008-04-16 13:38:39.000000000 +0300
+@@ -1,16 +0,0 @@
+-/*
+- * i18n.h: Internationalization
+- *
+- * See the README file for copyright information and how to reach the author.
+- *
+- * $Id$
+- */
+-
+-#ifndef _I18N__H
+-#define _I18N__H
+-
+-#include <vdr/i18n.h>
+-
+-extern const tI18nPhrase Phrases[];
+-
+-#endif //_I18N__H
