@@ -11,7 +11,7 @@ Version:	%version
 Release:	%mkrel %rel
 Group:		Video
 License:	GPL
-URL:		http://www.edener.de/
+URL:		https://www.edener.de/
 Source:		http://www.edener.de/%Plugin.tar.bz2
 Patch1:		atmolight-0.0.1-i18n-1.6.patch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
