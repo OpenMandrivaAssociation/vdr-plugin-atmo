@@ -8,7 +8,7 @@
 Summary:	VDR plugin: Atmolight-Plugin
 Name:		%name
 Version:	%version
-Release:	%mkrel %rel
+Release:	%rel.1
 Group:		Video
 License:	GPL
 URL:		https://www.edener.de/
